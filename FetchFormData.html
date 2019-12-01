@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form data Fetch</title>
+</head>
+<body>
+      <h1>Form data fetch !!!!</h1>
+      <div id="output"></div>
+      <form id="myForm">
+         <input type="text" name="first" value="pankaj"><br>
+         <input type="text" name="last" value="kumar"><br>
+         <input type="text" name="company" value="Google"><br>
+         <input type="submit" name="company" value="Send Data">
+        </form>
+     <script type="text/javascript">
+       var myForm =document.getElementById('myForm')
+       myForm.addEventListener('Submit',function(e)
+       {
+            e.preventDefault();
+            var data=JSon.stringify(formData(myForm));
+            console.log(data);
+       })
+       function formData(form)
+       {
+           var ele= form.querySelectorAll('input[type="text"]');
+           var myData={};
+           for(var x=0;x<ele.length;x++)
+           {
+               var name=ele[x].name;
+               var value=ele[x].value;
+               myData[name]=value;
+           }
+           return myData;
+       }
+     </script>
+</body>
+</html>

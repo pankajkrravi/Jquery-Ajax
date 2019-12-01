@@ -1,0 +1,36 @@
+<html>
+    <header>
+        <title>Friends Json OBject</title>
+    </header>
+    <body>
+        <h1>Friends Json Object</h1>
+        <div id="output"></div>
+        <script type="text/javascript">
+        var FriendsObject={
+          "friends":[{
+              "FirstName":"Munni",
+              "lastName":"Kumari"
+          },
+          {
+            "FirstName":"Anup",
+            "lastName":"Kumar"
+        },
+        {
+            "FirstName":"Jatan",
+            "lastName":"Veeer"
+        }, 
+        {
+            "FirstName":"Anusha",
+            "lastName":"Rao"
+        }]  
+        }
+        var users=FriendsObject.friends;
+        var html="";
+        for(x in users){
+        //console.log(users[x].FirstName+''+''+users[x].lastName)
+        html+=(Number(x)+1)+'. '+users[x].FirstName+''+''+users[x].lastName+'<br>'
+      }
+      document.getElementById('output').innerHTML=html;
+        </script>
+    </body>
+</html>

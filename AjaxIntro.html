@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AJAX Introduction </title>
+</head>
+<body>
+    <h1> AJAX Intro !!!</h1>
+    <div id="output">
+        <button id="loadButton">Load</button>
+<script type="text/javascript">
+       var output=document.getElementById('output')
+   var buttonClick=document.getElementById('loadButton')
+      buttonClick.addEventListener('click',function()
+      {
+        loadAjax();// Methord is called
+      })
+      //Ajax Method Impl
+      function loadAjax()
+      { 
+        var ajax=new XMLHttpRequest();
+       ajax.onreadystatechange=function()
+       {
+          // console.log('state changed ',ajax.readyState, ajax.status)
+           if(ajax.readyState==4 && ajax.status==200)
+           {
+                   //console.log('ready for data')
+                  // console.log(ajax.responseText)
+                   var JSONDATA=JSON.parse(ajax.responseText);
+                   //Display message on UI
+                 // var message=JSONDATA.name 
+                   //output.innerHTML=message;
+                   console.log(JSONDATA)
+
+           }
+       }
+       /* //onprogress check
+       ajax.onprogress=function(){
+           console.log('Progress ',ajax.readyState,ajax.status)
+       }    
+
+       ajax.onload=function(){
+           console.log('Done  ',ajax.readyState,ajax.status)
+       }*/
+       ajax.open('GET','https://randomuser.me/api/',true);
+           ajax.send();
+                   
+      }
+</script>
+    </div>
+</body>
+</html>

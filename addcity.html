@@ -1,0 +1,33 @@
+<div class="col-md-6">
+        <div class="form-group ">
+            <label class="col-md-4 control-label" for="country">Country <span class="text-error fontBold">*</span>: </label>
+            <div class="col-md-8">
+                <select class="form-control reqf non-editable-field" data-required="true" id="country" name="country" onchange="">
+                        <option value="-1">Select Country</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group ">
+            <label class="col-md-4 control-label" for="state">State <span class="text-error fontBold">*</span>: </label>
+            <div class="col-md-8">
+                <select class="form-control reqf non-editable-field" data-required="true" id="state" name="state">
+                    <option value="-1">Select State</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+            <div class="form-group ">
+                <label class="col-md-4 control-label" for="city">Enter City Name <span class="text-error fontBold">*</span>: </label>
+                <div class="col-md-8">
+                    <input class="form-control reqf field-number non-editable-field" id="city" name="city" type="text"/>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-12 tac" style="margin:15px 0;">
+            <button type="button" class="btn btn-success btn-lg property-tabs-forms-save-btn" onclick="saveBasicInfo();">Add city </button>
+        </div>
